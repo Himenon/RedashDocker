@@ -12,6 +12,8 @@ RUN apt-get update \
   && ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
   && dpkg-reconfigure -f noninteractive tzdata
 
+USER redash
+
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
